@@ -1,22 +1,52 @@
-function restart()
+var usr;
+function PlayPong(user)
+{
+  usr=user;
+}
+/*function restart()
 {
   location.reload();
-}
+}*/
+var i=1;
 var score=0;
+beforestart();
+function beforestart() {
+  if(i==1)
+  {
+    Start();
+    //paddle1.x=200;
+    //paddle1.y=300;
+  }
+  else
+    window.location="http://localhost/";
+}
+//while(i==1) {
+//}
+function Start()
+{
+var check=1;
 var animate = window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
   function(callback) { window.setTimeout(callback, 1000/60) };//calling function 60 times in a second
   //var canvas = document.createElement('canvas');
-  var canvas = document.createElement('canvas');
+  var canvas = document.getElementById('can');
 var width = 400;
 var height = 600;
-canvas.width = width;
-canvas.height = height;
+/*canvas.width = width;
+canvas.height = height;*/
 var context = canvas.getContext('2d');//grabbing 2d context
-window.onload = function() {
+var imge=new Image();
+imge.src='hrt_slate.jpg';
+imge.onload=function() {
+context.drawImage(imge,0,0,400,600);
+}
+function dothis()  {
   document.body.appendChild(canvas);//attaching a canvas to thw wepage
   animate(step);//calling function step
+}
+window.onload = function() {
+  dothis();
 };
 var step = function() {
   update();//update all the player objects-player's paddle,computer paddle,ball
@@ -27,8 +57,9 @@ var update = function() {
 };
 
 var render = function() {
-  context.fillStyle = "#FF00FF";//background-colour to pink
-  context.fillRect(0, 0, width, height);//filling colour in these co-ordinates
+  context.drawImage(imge,0,0,400,600);
+  //context.fillStyle = "#FF00FF";//background-colour to pink
+  //context.fillRect(0, 0, width, height);//filling colour in these co-ordinates
 };
 //Adding Paddles and a ball
 function Paddle(x, y, width, height) {
@@ -41,7 +72,8 @@ function Paddle(x, y, width, height) {
 }//providing the co-ordinates and the speed for the paddle
 
 Paddle.prototype.render = function() {
-  context.fillStyle = "#0000FF";
+  //context.fillStyle = "#ffcc00";
+  context.fillStyle = "#FFFFFF";
   context.fillRect(this.x, this.y, this.width, this.height);
 };//creating a paddle
 //player paddle
@@ -79,8 +111,9 @@ var computer = new Computer();
 var ball = new Ball(200, 300);
 
 var render = function() {
-  context.fillStyle = "#FF00FF";
-  context.fillRect(0, 0, width, height);
+  //context.fillStyle = "#FF00FF";
+  //context.fillRect(0, 0, width, height);
+  context.drawImage(imge,0,0,400,600);
   player.render();
   computer.render();
   ball.render();
@@ -119,8 +152,37 @@ Ball.prototype.update = function(paddle1, paddle2) {
     score++;
     this.x_speed = 0;
     this.y_speed = 3;
+    if(this.y>600)
+    {
+      score--;
+      if(usr!=undefined)
+      {
+      $.ajax({
+        type:"POST",
+        url:"scoring.php",
+        data:{user:usr,score:score,game:3},
+      });
+    }
+    alert("Game Over\nScore:"+score);
+    i=0;
+    beforestart();
+        //window.location="http://localhost/";
+      //var r=confirm("Game Over!\nScore:"+score);
+      /*score=0;
+      if(r==true)
+      {
+        i=0;
+        //continue;
+      }
+      else
+      {
+        i=0;
+        beforestart();
+      }*/
+    }
     this.x = 200;
     this.y = 300;
+    document.getElementById("score").value=score;
   }
 
   if(top_y > 300) {
@@ -203,3 +265,4 @@ Computer.prototype.update = function(ball) {
     this.paddle.x = 400 - this.paddle.width;
   }
 };
+}

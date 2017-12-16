@@ -1,0 +1,300 @@
+body{
+	margin-left: 0;
+	margin-right:0;
+	margin-top: 0; 
+	padding-top: 0;
+	background-color: rgba(0,0,0,1);
+}
+
+#menu{
+	position: absolute;
+	height: 100vh;
+	width: 15%;
+	background-color: black;
+	text-align: left;
+	left: -15%;
+	transition:.6s; 
+	position: fixed;
+	z-index: 1;
+}
+
+#menu.active{
+	left: 0%;
+	transition:.675s;
+}
+
+#menu a, .dropdown a{
+	display: block;
+	text-decoration: none;
+	font-family: calibri;
+	padding: 12px;
+	padding-left: 15px;
+	border-left: 3px solid red;  
+	color: white;
+	font: 20px 'Roboto Slab', serif;
+	opacity: 0.7;
+}
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.dropdown-cont{
+	display: none;
+	position: absolute;
+	background-color: black;
+	top: 100%;
+	left: 0%;
+	width: 100%;	
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-cont{
+	display:block;
+}
+
+.dropdown:hover .dropdown-cont a{
+	margin-left: 11%;
+}
+
+#menu a:hover{
+	border-left: 8px solid red;
+	opacity: 1;
+	transition: .2s; 
+}
+
+.icon{
+	position: relative;
+	left: 105%;
+	top: 2%;
+    width: 20%;
+    height: 5%;
+    padding-top: 0.1px;
+    cursor: pointer;
+}
+
+.icon span{
+	position: relative;
+	display: block;
+	height: 15%;
+	width: 80%;
+	margin: 5px;
+	background-color: white;
+}
+
+.icon:hover span{
+	margin-bottom: 8px;
+	transition: 0.2s;
+}
+
+#menu.active span:nth-child(1){
+	top: 10px;
+	transform: rotate(45deg);
+	transition: 0.5s;
+}
+
+#menu.active span:nth-child(2){
+	transition:0.5s;
+	opacity: 0;
+}
+
+#menu.active span:nth-child(3){
+	transition:0.5s;
+	top: -10px;
+	transform: rotate(-45deg);
+}
+
+#firstdiv{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	top: 0;
+	left: 0;
+	text-align: center;	
+	background-image: url("bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-attachment: fixed;
+	font: 15px 'Mr De Haviland', cursive;	
+}
+
+#firstdiv img{
+	margin-top: 5%;
+	width: 40%;
+}
+
+#firstdiv h1{
+	margin-left: 29%;
+	width: 27ch;
+    animation: text 1s steps(27), border 1s infinite;
+    white-space: nowrap;
+    overflow: hidden;  
+    border-right: 2px solid #000;
+    font-family: Mistral;
+    font-size: 300%;
+    color: white;
+    font: 300% 'Indie Flower', cursive;
+
+}
+
+
+@keyframes text{
+	from{width: 0ch;}
+	to{width: 27ch;}
+}
+
+@keyframes border{
+	from{border-color:transparent;}
+	to{border-color: white;}
+}
+
+#seconddiv{
+	position: absolute;
+	margin-top: 50%;
+	width: 70%;
+	height: 80%;
+	background-color: rgba(0,0,0,0.7);
+	top: 10%;
+	left: 15%;
+	text-align: center;
+	background-image: url("3.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-attachment: fixed;
+	box-shadow: 0px 0px 80px black;
+}
+#seconddiv img{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+#left_button{
+	position: absolute;
+	height: 10%;
+	width: 5%;
+	top: 40%;
+	background-color: rgba(255,255,255,0.2);
+}
+
+#right_button{
+position: absolute;
+height: 10%;
+width: 5%;
+top: 40%;
+left: 95%;
+background-color: rgba(255,255,255,0.2);
+}		
+
+#left_button:hover , #right_button:hover{
+	cursor: pointer;
+}
+
+
+#thirddiv{
+	position: absolute;
+	margin-top: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	top: 0;
+	left: 0;
+	text-align: center;
+	background-image: url("4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-attachment: fixed;
+}
+
+
+
+#lastdiv{
+	position: relative;
+	margin-top: 30%;
+	width: 100%;
+	height: 40%;
+	background-color: rgba(0,0,0,1);
+	top: 0;
+	left: 0;
+	text-align: center;
+	background-attachment: fixed;
+}
+
+#lastdiv img{
+	position: absolute;
+	top: 0%;
+	left: 12%;
+	height: 200px;
+	width: 220px;
+}
+
+#arrow{
+	position: relative;
+	top: 55%;
+	left: 46%;
+	height: 50px;
+	width: 4%;
+	text-align: center;
+	border-radius: 100%;
+	background-color: rgba(255,255,255,0.5);
+}
+
+#arrow img{
+	position: relative;	
+}
+
+#arrow:hover{
+   background-color: rgba(255,255,255,1);	
+}
+
+#arrow:hover img{
+   bottom:9%;  
+}
+
+#lastdiv p{
+	position: relative;
+	color: white;
+	font-family: calibri;
+	font-size: 18px; 
+}
+
+#lastdiv a{
+	display: block;
+	text-decoration: none;
+	font-family: calibri;
+	padding: 1px;
+	margin: 4px; 
+	width: 10%;
+	margin-left: 45%;
+	color: white;
+}
+
+#lastdiv a:hover{
+   color: rgba(255,0,0,1);
+   transition: 0.3s; 
+}
+ 
+#para{
+	position: relative;
+	text-align: left;
+	height: 80%;
+    width: 20%;
+    left: 75%;
+    bottom: 60%;
+} 
+
+#para a{
+  width: 100%;
+  margin-left: 0%;	
+}
+
+#para a:hover{
+	 color: rgba(100,100,255,1);
+   transition: 0.3s;
+}
+
+.fade{
+

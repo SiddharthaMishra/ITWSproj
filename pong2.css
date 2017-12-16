@@ -1,0 +1,18 @@
+@font-face{
+  font-family: "Minecraft_Regular";
+  src: url("Minecraft_Regular/Minecraft_Regular.eot");
+  src: url("Minecraft_Regular/Minecraft_Regular.woff")format("woff"),url("Minecraft_Regular/Minecraft_Regular.otf")format("opentype"),url("Minecraft_Regular/Minecraft_Regular.svg#filename")format("svg");
+}
+.h1
+{
+    font-family: "Minecraft_Regular";
+    font-weight: normal;
+    font-style: normal;
+}
+#grad1{
+  /*height:100%;
+  width: 100%;
+  background: -moz-linear-gradient(to right,red,yellow);
+  background: linear-gradient(to right,red,yellow);*/
+  background-color: darkgrey;
+}

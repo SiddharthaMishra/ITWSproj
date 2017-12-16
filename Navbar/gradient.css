@@ -1,0 +1,11 @@
+body{
+    background: linear-gradient(-80deg, #f1f2b5, #135058, #c2e9fb, #53346d, #667eea);
+    animation: slide 20s infinite;
+    background-size: 1000% 1000%;
+}
+
+@keyframes slide{
+	0%{background-position: 0% 0%;}
+	50%{background-position: 100% 70%;}
+	100%{background-position: 0% 0%;}
+}

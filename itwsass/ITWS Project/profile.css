@@ -1,0 +1,73 @@
+#profile{
+	position: absolute;
+	top: 18%;
+	left: 25%;
+	width: 50%;
+	height: auto;
+	background-color: rgba(255,255,255,0.7);
+	padding: 1%;
+	border-radius: 2%;
+	margin-bottom: 3%;
+}
+
+@font-face{
+	font-family: ubuntumono;
+	src:url(UbuntuMono-R.woff);
+}
+
+hr{
+	color: rgba(255,0,0,1);
+	width: 98%;
+}
+
+img{
+	position: relative;
+	height: 32%;
+	width: 15%;
+	left: 40%;
+}
+
+h2{
+	position: relative;
+	left: 40%;
+	color: rgba(140,69,19,1);
+}
+
+label{
+	color: rgba(20,20,20,1);
+	font-family: ubuntumono;
+	font-weight: 150%;
+}
+
+span{
+	position: absolute;
+	color: rgba(20,20,20,0.7);
+	left: 28%;	
+}
+
+table, tr, td{
+	border-collapse: collapse;
+	padding: 1%;   
+}
+
+table{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border-top: 3px solid rgba(255,120,40,0.7);
+	border-bottom: 3px solid rgba(255,120,40,0.7);
+}
+
+tr:nth-child(1){
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+
+tr{
+	background-color: rgba(192,192,192,0.5);
+}
+
+h3{
+	color: rgba(70,0,0,0.6);
+	font-family: georgia;
+}
